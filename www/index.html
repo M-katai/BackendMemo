@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
+</head>
+<body>
+	<!-- Login Page -->
+  <div data-role="page" id="LoginPage">
+    <header data-role="header" data-position="fixed">
+      <h1>Monaca Memo</h1>
+    </header>
+      <section data-role="content">
+      <h1>Sign in</h1>
+      Email:
+        <input type="text" id="login_email">
+      Password:
+        <input type="password" id="login_password">
+      New to Monaca Memo?
+        <a href="#RegisterPage" data-role="button" data-mini="true" data-inline="true" data-theme="b">Register</a>
+        <a href="#" id="LoginBtn" data-role="button" data-inline="false" data-theme="b">Login</a>
+      </section>
+  </div>
+  
+  <!-- Register Page -->
+<div data-role="page" id="RegisterPage">
+  <header data-role="header" data-position="fixed">
+    <h1>Monaca Memo</h1>
+  </header>
+    <section data-role="content">
+    <h1>Sign up</h1>
+    Email:
+      <input type="text" id="reg_email">
+    Password:
+      <input type="password" id="reg_password">
+      <a href="#" id="RegisterBtn" data-role="button" data-inline="false" data-theme="b">Register</a>
+    </section>
+</div>
+
+ <!-- List Page -->
+  <div data-role="page" id="ListPage">
+    <header data-role="header" data-position="fixed">
+      <a href="#" class="ui-btn-left" id="LogoutBtn" data-theme="b" style="margin-top: 20px;">Logout</a>
+      <h1>Monaca Memo</h1>
+      <a href="#AddPage" data-icon="plus" class="ui-btn-right" data-theme="b" style="margin-top: 20px;">Add</a>
+    </header>
+    <section data-role="content">
+      <ul id="TopListView" data-role="listview"
+        data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-split-icon="delete">
+      </ul>
+    </section>
+         
+    <!-- Delete Dialog  -->
+    <div data-role="popup"  id="yesNoDialog_delete" style="width: 300px; height: 150px;">
+      <div data-role="content">Delete</div>
+      <a href="#" id="deleteMemo" data-role="button" data-inline="false" data-theme="b">YES</a>
+      <a data-role="button" data-rel="back" data-theme="b">NO</a>
+    </div>
+  </div>
+ 
+  
+  <!-- Add Memo Page -->
+  <div data-role="page" id="AddPage">
+    <header data-role="header" data-position="fixed">
+      <a data-role="button" data-rel="back" data-icon="back" data-theme="b" style="margin-top: 20px;">Back</a>
+      <h1>Add Memo</h1>
+    </header>
+    <section data-role="content">
+      <label for="Memo">Title</label>
+      <input type="text" id="title">
+      <label for="Memo">Memo:</label>
+      <textarea id="content" style="height: 200px;"></textarea>
+      <a data-role="button" data-icon="check" id="SaveBtn" data-theme="b">Save</a>
+    </section>
+  </div>
+  
+  <!-- Detail Page -->
+  <div data-role="page" id="ShowPage">
+    <header data-role="header" data-position="fixed">
+      <a data-role="button" data-rel="back" data-icon="back" data-theme="b" style="margin-top: 20px;">Back</a>
+      <h1>Monaca Memo</h1>
+      <a href="#" data-role="button" id="memoEdit" data-theme="b" style="margin-top: 20px;">Edit</a>
+    </header>
+    <section data-role="content">
+      <h2 id="clTitle"></h2>
+      <p id="clContent"></p>
+      <p id="clId" style="display:none"></p>
+    </section>
+  </div>
+  
+    <!-- Edit Memo Page -->
+  <div data-role="page" id="EditPage">
+    <header data-role="header" data-position="fixed">
+      <a data-role="button" data-rel="back" data-icon="back" data-theme="b" style="margin-top: 20px;">Back</a>
+      <h1>Edit Memo</h1>
+    </header>
+    <section data-role="content">
+      <p id="editlId" style="display:none"></p>
+      <label for="Memo">Title:</label>
+      <!-- <input type="text" id="editTitle"> -->
+      <textarea id="editTitle"></textarea>
+      <label for="Memo">Memo:</label>
+      <textarea id="editContent" style="height: 200px;"></textarea>
+      <a data-role="button" data-icon="check" id="UpdateBtn" data-theme="b">Update</a>
+    </section>
+    
+    <!-- Edit Dialog -->
+      <div data-role="popup"  id="okDialog_edit" style="width: 300px; height: 150px;">
+      <div data-role="content">Edit</div>
+      <a href="#" data-role="button" data-inline="false" data-theme="b">YES</a>
+      <a data-role="button" data-rel="back" data-theme="b">NO</a>
+    </div>
+  </div>
+
+</body>
+</html>
